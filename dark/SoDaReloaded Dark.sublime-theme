@@ -14,7 +14,7 @@
         "tab_overlap": 5,
         "tab_width": 180,
         "tab_min_width": 45,
-        "tab_height": 25,
+        "tab_height": 30,
         "mouse_wheel_switch": false
     },
     {
@@ -41,7 +41,7 @@
     {
         "class": "tab_control",
         "settings": ["show_tab_close_buttons"],
-        "content_margin": [12, 3, 7, 3]
+        "content_margin": [12, 3, 7, 5]
     },
     // Tab hover state
     {
@@ -205,7 +205,6 @@
 //
 // TAB LABELS
 //
-
     {
         "class": "tab_label",
         "fade": true,
@@ -225,6 +224,7 @@
         "parents": [{"class": "tab_control", "attributes": ["selected"]}],
         "fg": [230, 230, 230],
         "shadow_color": [35, 35, 35]
+
     },
     {
         "class": "tab_label",
@@ -232,10 +232,22 @@
         "font.italic": true
     },
 
+    {
+        "class": "tab_label",
+        "settings": ["highlight_modified_tabs"],
+        "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+        "fg": [255, 255, 255]
+    },
+    {
+        "class": "tab_label",
+        "settings": ["highlight_modified_tabs"],
+        "parents": [{"class": "tab_control", "attributes": ["dirty", "selected"]}],
+        "fg": [255, 255, 255]
+    },
+
 //
 // TAB SCROLLING
 //
-
     // Tab dropdown
     {
         "class": "show_tabs_dropdown_button",
@@ -512,7 +524,9 @@
     // General labels
     {
         "class": "label_control",
-        "color": [204, 204, 204]
+        "color": [204, 204, 204],
+        "font.size": 12,
+        "font.face": "OpenSans"
     },
     // Text field labels
     {
@@ -544,7 +558,9 @@
     // Tooltip content
     {
         "class": "tool_tip_label_control",
-        "color": [0, 0, 0]
+        "color": [0, 0, 0],
+        "font.size": 14,
+        "font.face": "OpenSans"
     },
 
 //
@@ -568,9 +584,11 @@
     {
         "class": "label_control",
         "parents": [{"class": "status_bar"}],
-        "color": [150, 150, 150],
+        "color": [190, 190, 190],
         "shadow_color": [25, 25, 25],
-        "shadow_offset": [0, -1]
+        "shadow_offset": [0, -1],
+        "font.size": 13,
+        "font.face": "OpenSans"
     },
 
 //
@@ -588,15 +606,15 @@
     // Sidebar tree
     {
         "class": "sidebar_tree",
-        "row_padding": [8, 4],
+        "row_padding": [8, 3],
         "indent": 17,
-        "indent_offset": 15,
+        "indent_offset": 10,
         "indent_top_level": false
     },
     // Sidebar rows
     {
         "class": "tree_row",
-        "layer0.texture": "Theme - SoDaReloaded/dark/images/sidebar-row-selected.png",
+        "layer0.tint": [40, 40, 40],
         "layer0.opacity": 0.0,
         "layer0.inner_margin": [1, 1]
     },
@@ -604,12 +622,29 @@
     {
         "class": "tree_row",
         "attributes": ["selected"],
+        "layer0.tint": [40, 40, 60],
+        "layer0.opacity": 1.0
+    },
+    // Sidebar row hover
+    {
+        "class": "tree_row",
+        "attributes": ["hover"],
+        "layer0.tint": [40, 40, 40],
+        "layer0.opacity": 1.0
+    },
+    // Sidebar row selected
+    {
+        "class": "tree_row",
+        "attributes": ["selected", "hover"],
+        "layer0.tint": [40, 40, 120],
         "layer0.opacity": 1.0
     },
     // Sidebar heading
     {
         "class": "sidebar_heading",
         "color": [210, 210, 210],
+        "font.size": 12,
+        "font.face": "OpenSans",
         "font.bold": true,
         "shadow_color": [0, 0, 0],
         "shadow_offset": [0, -1]
@@ -623,11 +658,13 @@
     // Sidebar entry
     {
         "class": "sidebar_label",
-        "color": [125, 125, 125],
+        "color": [210, 210, 210],
         "shadow_color": [0, 0, 0],
         "shadow_offset": [0, -1],
         "font.bold": false,
-        "font.italic": false
+        "font.italic": false,
+        "font.size": 13,
+        "font.face": "OpenSans"
     },
     // Sidebar folder entry
     {
